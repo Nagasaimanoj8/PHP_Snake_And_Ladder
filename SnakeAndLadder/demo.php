@@ -1,7 +1,7 @@
 <?php
 class snake{
  private $count=0;
- public $startposition=0;
+ private $startposition=0;
  private $previousposition;
  public function welcome(){
    echo "Welcome to Snake And Ladder Game \n";
