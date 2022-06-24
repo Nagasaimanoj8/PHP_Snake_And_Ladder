@@ -4,7 +4,7 @@ class snake{
  private $startposition=0;
  private $previousposition;
  public function welcome(){
-   echo "Welcome to Snake And Ladder Game";
+   echo "Welcome to Snake And Ladder Game \n";
    echo "Any Player starts from $this->startposition \n";
  }
  public function play()
@@ -15,22 +15,26 @@ class snake{
     return $this->startposition;
     $this->nextMove($this->startposition);
  }
+ public function option(){
+   return rand(1,3);
+ }
  //create function to check option for NO Play,Ladder,Snake
- public function nextMove()
+ public function nextMove($option)
  {
-     $option = rand(1, 3);
      switch ($option) {
          case 1:
-             echo " player on Ladder move to next position " . $this->previousposition += $this->startposition;
-             echo "\n";
+            
+            echo " No Play " . $this->previousposition = $this->previousposition;
+            echo "\n";
              break;
          case 2:
-             echo " player on snake move to previous Position " . $this->previousposition -= $this->startposition;
+            echo " player on Ladder move to next position " . $this->previousposition += $this->startposition;
              echo "\n";
-             break;
-         default:
-             echo " No Play " . $this->previousposition = $this->previousposition;
-             echo "\n";
+               break;
+         case 3:
+            echo "player taker the snake".  $this->previousposition-=$this->startposition;
+            echo "\n";
+            break;
      }
      echo "Current Position is:" . $this->previousposition . "\n";
  }
@@ -38,5 +42,6 @@ class snake{
 $obj=new snake();
 $obj->welcome();
 $obj->play();
-$obj->nextMove();
+$option =$obj->option();
+$obj->nextMove($option);
 ?>
