@@ -10,11 +10,10 @@ class snake{
  }
  public function play()
 {
-    $previousposition=$this->startposition;
-    $this->count++;
+     $this->count++;
     $this->rolldice=rand(1, 6);
-    //  echo" the next position after dice rolled is :$this->startposition"."\n";
-    return $this->startposition;
+      echo" number of times dice rolled is :$this->rolldice"."\n";
+    return $this->rolldice;
     
  }
  public function option(){ 
@@ -23,19 +22,16 @@ class snake{
  //create function to check option for NO Play,Ladder,Snake
  public function nextMove($option)
  {
-   
-               
-
               $this->previousposition = $this->startposition;
               switch ($option) {
- 
-             case 1:
+               case 1:
+                echo"NoPlay";
                  $this->startposition = $this->startposition;
                  echo "Previous Position : $this->previousposition & StartPosition :  $this->startposition \n";
                  break;
 
              case 2:
-                
+                echo " player on snake move to previous Position";
                  $this->startposition += $this->rolldice;
                  if($this->startposition < 100){
                      echo "Previous Position : $this->previousposition & StartPosition : $this->startposition \n";
@@ -52,6 +48,7 @@ class snake{
                  break;
 
              case 3:
+                echo " player on Ladder move to next position";
                  $this->startposition -= $this->rolldice;
                  if($this->startposition < 0){
                      $this->startposition = 0;
